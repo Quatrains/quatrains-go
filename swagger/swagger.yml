@@ -44,6 +44,21 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/models.InterestList'
+  /user/interests/:
+    post:
+      tags:
+      - user/interests
+      description: get all Interests
+      operationId: UserInterestController.CreateUserInterest
+      parameters:
+      - in: body
+        name: body
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.UserInterestReq'
+      responses:
+        "200":
+          description: '{}'
 definitions:
   models.DailyPoetry:
     title: DailyPoetry
@@ -112,6 +127,15 @@ definitions:
         type: string
       title_tr:
         type: string
+  models.UserInterestReq:
+    title: UserInterestReq
+    type: object
+    properties:
+      interest_ids:
+        type: array
+        items:
+          type: integer
+          format: int64
 tags:
 - name: interests
   description: |

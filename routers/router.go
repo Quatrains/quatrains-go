@@ -25,6 +25,11 @@ func init() {
 				&controllers.PoetryController{},
 			),
 		),
+		beego.NSNamespace("/user/interests",
+			beego.NSInclude(
+				&controllers.UserInterestController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 
