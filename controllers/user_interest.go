@@ -27,7 +27,7 @@ func (this *UserInterestController) CreateUserInterest() {
 	}
 
 	interestIds := body["interest_ids"]
-	models.CreateUserInterest(2, interestIds)
+	models.CreateUserInterest(12, interestIds)
 	this.Data["json"] = "{}"
 	this.ServeJSON()
 }
